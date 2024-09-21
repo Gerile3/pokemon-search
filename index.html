@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>The Pokemon APP</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="head-title">Pokémon Search App</h1>
+    </header>
+    
+    <section class="app-container">
+        
+        <div class="search-container">
+            <p>Search for Pokémon Name or ID:</p>
+            <input name="pokemon" type="text" id="search-input" required="">
+            <button id="search-button">Search</button>
+        </div>
+
+        <div class="info-container">
+            <div id="pokemon-info-card">
+                <div class="base-info">
+                    <p id="pokemon-name"><span id="pokemon-id"></span></p>
+                    <p>Weight: <span id="weight">1</span></p>
+                    <p>Height: <span id="height">2</span></p>
+                </div>
+
+                <div class="image-container">
+                    <img src="" alt="" class="poke-img">
+                </div>
+                
+                <div class="affinities">
+                    <p id="types">Types: </p>
+                </div>
+            </div>
+
+            <table id="stats-table">
+                <tr>
+                    <th>Base</th>
+                    <th>Stats</th>
+                </tr>
+                <tr>
+                    <td>HP:</td>
+                    <td id="hp"></td>
+                </tr>
+                <tr>
+                    <td>Attack:</td>
+                    <td id="attack"></td>
+                </tr>
+                <tr>
+                    <td>Defense:</td>
+                    <td id="defense"></td>
+                </tr>
+                <tr>
+                    <td>Sp. Attack:</td>
+                    <td id="special-attack"></td>
+                </tr>
+                <tr>
+                    <td>Sp. Defense:</td>
+                    <td id="special-defense"></td>
+                </tr>
+                <tr>
+                    <td>Speed:</td>
+                    <td id="speed"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Gerile3. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
