@@ -20,19 +20,17 @@ async function processPokemonInfo(nameOrId) {
 
     if(data){
         const {name, id, height, weight, stats, sprites, types} = data
-        document.querySelector("#pokemon-name").textContent = `${name.toUpperCase()} #${id}`
+        document.querySelector("#pokemon-name").textContent = `${name.toUpperCase()}`
+        document.querySelector("#pokemon-id").textContent = "#" + id
         document.querySelector("#height").textContent = height
         document.querySelector("#weight").textContent = weight
         document.querySelector(".poke-img").src = sprites.front_default
+        document.querySelector(".poke-img").id = "sprite"
     
-        for (let index = 0; index < types.length; index++) {
-            const type = document.createElement("span");
-            type.id = "type"
-            type.className = `affinities ${types[index].type.name}`
-            type.textContent = types[index].type.name
-            affinities.appendChild(type)
-        }
-    
+        affinities.innerHTML = types
+        .map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`)
+        .join('');
+
         statsTable.forEach((td) => {
             switch (td.id) {
                 case "attack":
@@ -62,17 +60,21 @@ async function processPokemonInfo(nameOrId) {
 
 searchBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    if (searchInput.value) {
-        if(document.getElementById("type")){
-            elements = document.querySelectorAll("#type")
-            elements.forEach((element)=>{
-                element.remove()
-            })
-        }
-        processPokemonInfo(searchInput.value)
+    const searchValue = searchInput.value.trim();
+    if (searchValue) {
+        affinities.innerHTML = '';
+        processPokemonInfo(searchValue.toLowerCase());
+    } else {
+        document.querySelector("#pokemon-name").textContent = "Please enter a Pokémon name or ID";
     }
-    return
-})
+});
+
+searchInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        processPokemonInfo(searchInput.value.toLowerCase());
+    }
+});
 
 window.addEventListener("load", () => {
     searchInput.value = ""
