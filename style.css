@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
     padding: 0;
     background: #f3f3f3; /* Default background */
@@ -72,11 +72,11 @@ header {
 
 .base-info {
     flex: 1;
+    margin-left: 5px;
 }
 
 .base-info p {
     font-size: 1.2rem;
-    margin: 5px 0;
 }
 
 .image-container {
@@ -91,6 +91,7 @@ header {
 
 #types {
     margin-top: 10px;
+    margin-right: 5px;
 }
 
 .type {
@@ -136,7 +137,7 @@ footer {
 }
 
 .water {
-    background: linear-gradient(120deg, #4a90e2, #2d9cdb);
+    background: linear-gradient(120deg, #0c6ddb, #75b1da);
 }
 
 .grass {
@@ -165,6 +166,7 @@ footer {
 
 .dark {
     background: linear-gradient(120deg, #424242, #212121);
+    color: white;
 }
 
 .flying {
@@ -181,10 +183,12 @@ footer {
 
 .ghost {
     background: linear-gradient(120deg, #7e57c2, #673ab7);
+    color: white;
 }
 
 .dragon {
     background: linear-gradient(120deg, #1976d2, #1565c0);
+    color: white;
 }
 
 .steel {
@@ -197,6 +201,7 @@ footer {
 
 .poison {
     background: linear-gradient(120deg, #ba68c8, #9c27b0);
+    color: white;
 }
 
 .normal {
